@@ -1,0 +1,16 @@
+@use "../mixins/convert-theme" as *;
+
+// Uses LUMINOUS BLUE theme for royal navy officers convert template
+// Apply specific styling to royal navy officers convert template
+
+// For global styles
+.global.template-convert-royal-navy-officers {
+    @include global-convert-theme(luminous-blue);
+    // additional global styles for royal navy officers convert template can go here
+}
+
+// For frame styles - royal navy officers convert template
+.frame.template-convert-royal-navy-officers {
+    // additional frame specific styles for royal navy officers convert template can go here
+    @include frame-convert-theme(luminous-blue);
+}

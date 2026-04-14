@@ -1,0 +1,38 @@
+@use "../mixins/convert-theme" as *;
+
+// Uses GREEN theme for royal marines convert template
+// Apply specific styling to royal marines convert template
+
+// For global styles
+.global.template-convert-royal-marines {
+    @include global-convert-theme(green);
+    // additional global styles for royal marines convert template can go here
+
+    .global__logo {
+        object-fit: contain;
+        width: 24px;
+        height: 40px;
+        top: 5px;
+        left: 5px;
+    }
+
+    // Align global CTA with frame CTA
+    .global__cta {
+        left: 35px;
+    }
+}
+
+// For frame styles - royal marines convert template
+.frame.template-convert-royal-marines {
+    // additional frame specific styles for royal marines convert template can go here
+    @include frame-convert-theme(green);
+
+    // Adjust copy and CTA positions for Royal Marines convert
+    .frame__copy-container {
+        left: 35px;
+    }
+
+    .frame__cta {
+        left: 35px;
+    }
+}

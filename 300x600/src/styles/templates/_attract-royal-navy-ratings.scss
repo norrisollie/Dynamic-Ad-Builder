@@ -1,0 +1,16 @@
+@use "../mixins/attract-theme" as *;
+
+// Uses LUMINOUS BLUE theme for royal navy ratings attract template
+// Apply specific styling to royal navy ratings attract template
+
+// For global styles
+.global.template-attract-royal-navy-ratings {
+    @include global-attract-theme(luminous-blue);
+    // additional global styles for royal navy ratings attract template can go here
+}
+
+// For frame styles - royal navy ratings attract template
+.frame.template-attract-royal-navy-ratings {
+    // additional frame specific styles for royal navy ratings attract template can go here
+    @include frame-attract-theme(luminous-blue);
+}

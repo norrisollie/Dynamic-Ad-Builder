@@ -1,0 +1,73 @@
+{
+    "name": "parcel-vanilla-starter",
+    "private": true,
+    "version": "0.0.0",
+    "source": "src/index.html",
+    "staticFiles": {
+        "staticPath": "src/assets",
+        "staticOutPath": "assets"
+    },
+    "targets": {
+        "development": {
+            "sourceMap": false,
+            "optimize": true,
+            "publicUrl": "./"
+        },
+        "serve-development": {
+            "sourceMap": true,
+            "optimize": false,
+            "publicUrl": "./"
+        },
+        "example": {
+            "sourceMap": false,
+            "optimize": true,
+            "publicUrl": "./"
+        },
+        "serve-example": {
+            "sourceMap": true,
+            "optimize": false,
+            "publicUrl": "./"
+        },
+        "live": {
+            "sourceMap": false,
+            "optimize": true,
+            "publicUrl": "./",
+            "engines": {
+                "browsers": "Chrome >= 80, Firefox >= 75, Safari >= 13, Edge >= 80"
+            }
+        }
+    },
+    "alias": {
+        "./assets": "./src/assets"
+    },
+    "parcelIgnore": [
+        "^(src/)?assets/.*"
+    ],
+    "scripts": {
+        "clean:dist": "rm -rf dist",
+        "clean:output": "rm -rf output*",
+        "clean:cache": "rm -rf .parcel-cache",
+        "clean:all": "npm run clean:cache && npm run clean:dist && npm run clean:output",
+        "prestart": "npm run clean:dist",
+        "prebuild": "npm run clean:all",
+        "prebuild:development": "echo 'prebuild:development: cleaning caches and outputs' && rm -rf .parcel-cache ../.parcel-cache .cache ../.cache dist output && echo 'prebuild:development: done'",
+        "prebuild:example": "echo 'prebuild:example: cleaning caches and outputs' && rm -rf .parcel-cache ../.parcel-cache .cache ../.cache dist output && echo 'prebuild:example: done'",
+        "prebuild:live": "echo 'prebuild:live: cleaning all caches and outputs' && rm -rf .parcel-cache ../.parcel-cache .cache ../.cache dist output && echo 'prebuild:live: done'",
+        "start:dev": "CREATIVE_ENV=development parcel serve src/index.html --port 1240 --target serve-development",
+        "start:example": "CREATIVE_ENV=example parcel serve src/index.html --port 1240 --target serve-example",
+        "start:live": "CREATIVE_ENV=live parcel serve src/index.html --port 1240 --target live",
+        "build:development": "CREATIVE_ENV=development parcel build src/index.html --target development --dist-dir ./dist --no-source-maps",
+        "build:example": "CREATIVE_ENV=example parcel build src/index.html --target example --dist-dir ./dist --no-source-maps",
+        "build:live": "CREATIVE_ENV=live parcel build src/index.html --target live --dist-dir ./dist --no-source-maps"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.15.4",
+        "parcel": "^2.14.0",
+        "parcel-reporter-static-files-copy": "^1.5.3",
+        "parcel-resolver-ignore": "^2.2.0"
+    },
+    "dependencies": {
+        "caniuse-lite": "^1.0.30001757",
+        "gsap": "^3.13.0"
+    }
+}

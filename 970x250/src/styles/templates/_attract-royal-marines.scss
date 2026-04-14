@@ -1,0 +1,25 @@
+@use "../mixins/attract-theme" as *;
+
+// Uses GREEN theme for royal marines attract template
+// Apply specific styling to royal marines attract template
+
+// For global styles
+.global.template-attract-royal-marines {
+    @include global-attract-theme(green);
+    // additional global styles for royal marines attract template can go here
+}
+
+// For frame styles - royal marines attract template
+.frame.template-attract-royal-marines {
+    // additional frame specific styles for royal marines attract template can go here
+    @include frame-attract-theme(green);
+    &:not(&#frame-1) {
+        .frame__inner {
+            .frame__logo {
+                width: 69px;
+                height: 130px;
+                object-fit: contain;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@use "../mixins/convert-theme" as *;
+
+// Uses GREEN theme for royal marines convert template
+// Apply specific styling to royal marines convert template
+
+// For global styles
+.global.template-convert-royal-marines {
+    @include global-convert-theme(green);
+    // additional global styles for royal marines convert template can go here
+
+    .global__logo {
+        // Override logo size for royal marines 970x250 convert
+        width: 41px;
+        height: 77px;
+        top: 10px;
+        left: 10px;
+        object-fit: contain;
+    }
+}
+
+// For frame styles - royal marines convert template
+.frame.template-convert-royal-marines {
+    // additional frame specific styles for royal marines convert template can go here
+    @include frame-convert-theme(green);
+}

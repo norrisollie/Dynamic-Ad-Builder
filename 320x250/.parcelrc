@@ -1,0 +1,15 @@
+{
+    "extends": "@parcel/config-default",
+    "namers": [
+        "./parcel-namer-nohash.js",
+        "..."
+    ],
+    "reporters": [
+        "parcel-reporter-static-files-copy",
+        "..."
+    ],
+    "resolvers": [
+        "parcel-resolver-ignore",
+        "..."
+    ]
+}

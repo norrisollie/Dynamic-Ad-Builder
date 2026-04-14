@@ -1,0 +1,27 @@
+@use "./variables" as *;
+@use "./core"; // Core styles, e.g. resets, variables, body/html styles
+@use "./fonts"; // Font face declarations
+
+// used on the attract and convert templates
+// @use "./mixins.scss" as *; // Mixins for reusable styles and functions
+
+// template specific styles for reserves, attract and convert - royal marines, royal navy - ratings, royal navy - officers, royal navy - engineers, royal navy - submariners
+
+// Import template specific styles, this is for shared styles across attract or convert templates
+@use "./templates/template-attract";
+@use "./templates/template-convert";
+
+// specific styles for reserves template - attract and convert - white theme
+@use "./templates/template-reserves"; // for reserves template attract and convert - white theme
+
+// any strand specific styles in attract and convert templates for specific roles
+@use "./templates/attract-royal-marines"; // for attract royal marines template - theme green
+@use "./templates/convert-royal-marines"; // for convert royal marines template - theme green
+@use "./templates/attract-royal-navy-ratings"; // for attract - royal navy - ratings template - theme luminous blue
+@use "./templates/convert-royal-navy-ratings"; // for convert - royal navy - ratings template - theme luminous blue
+@use "./templates/attract-royal-navy-officers"; // for attract - royal navy - officers template - theme luminous blue
+@use "./templates/convert-royal-navy-officers"; // for convert - royal navy - officers template - theme luminous blue
+@use "./templates/attract-royal-navy-engineers"; // for attract - royal navy - engineers template - theme dark blue
+@use "./templates/convert-royal-navy-engineers"; // for convert - royal navy - engineers template - theme dark blue
+@use "./templates/attract-royal-navy-submariners"; // for attract - royal navy - submariners template - theme dark blue
+@use "./templates/convert-royal-navy-submariners"; // for convert - royal navy - submariners template - theme dark blue

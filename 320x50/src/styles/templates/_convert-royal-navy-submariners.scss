@@ -1,0 +1,16 @@
+@use "../mixins/convert-theme" as *;
+
+// Uses DARK BLUE theme for royal navy submariners convert template
+// Apply specific styling to royal navy submariners convert template
+
+// For global styles
+.global.template-convert-royal-navy-submariners {
+    @include global-convert-theme(dark-blue);
+    // additional global styles for royal navy submariners convert template can go here
+}
+
+// For frame styles - royal navy submariners convert template
+.frame.template-convert-royal-navy-submariners {
+    // additional frame specific styles for royal navy submariners convert template can go here
+    @include frame-convert-theme(dark-blue);
+}

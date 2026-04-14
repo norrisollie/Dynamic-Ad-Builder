@@ -1,0 +1,75 @@
+// Dimensions
+$adWidth: 970px;
+$adHeight: 250px;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: "Big Shoulders", sans-serif;
+    font-weight: normal;
+    line-height: 1;
+}
+
+body * {
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p {
+    margin: 0;
+}
+
+light {
+    font-weight: 300;
+}
+
+regular {
+    font-weight: 400;
+}
+
+medium {
+    font-weight: 500;
+}
+
+semibold,
+semi-bold {
+    font-weight: 600;
+}
+
+bold {
+    font-weight: 700;
+}
+
+extrabold,
+extra-bold {
+    font-weight: 800;
+}
+
+black {
+    font-weight: 900;
+}
+
+// Ad Container
+#ad {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: $adWidth;
+    height: $adHeight;
+    margin: auto;
+    border: 1px solid #000;
+    overflow: hidden;
+    background-color: #fff;
+    cursor: pointer;
+}

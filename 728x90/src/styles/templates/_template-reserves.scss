@@ -1,0 +1,114 @@
+@use "../core";
+@use "../fonts";
+@use "../variables" as *;
+
+// Global and global elements
+.global.template-reserves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    color: $black;
+
+    &.template-reserves {
+        // Logo
+        .global__logo {
+            width: 42px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        // Image
+        .global__image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .global__cta {
+            font-family: Barlow, sans-serif;
+            font-size: 11px;
+            position: absolute;
+            bottom: 24px;
+            left: 320px;
+        }
+    }
+}
+
+// Frame and frame elements
+.frame.template-reserves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: $black;
+
+    // Copy Container
+    .frame__copy-container {
+        opacity: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 23px;
+        display: flex;
+        position: absolute;
+        top: 20px;
+        left: 80px;
+        right: 230px;
+        bottom: 0;
+        overflow: hidden;
+        font-weight: 800;
+
+        .frame__copy {
+            width: 100%;
+            // TODO: could split this to another field?
+            #frame__copy-line-3 {
+                font-size: 11px;
+                margin-top: 10px;
+                font-weight: 700;
+                font-family: "Barlow";
+                left: 240px;
+                position: absolute;
+                top: 30px;
+            }
+            #frame__copy-line-4 {
+                font-size: 11px;
+                font-family: "Barlow";
+                font-weight: 500;
+                left: 240px;
+                position: absolute;
+                top: 30px;
+            }
+        }
+    }
+    // Image
+    .frame__image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0; // start hidden; GSAP cross-fades images in
+        z-index: 1;
+    }
+
+    .frame__cta {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: #fff;
+        padding: 7px 20px 8px;
+        border-radius: 99px;
+        z-index: 2;
+        opacity: 0;
+    }
+}

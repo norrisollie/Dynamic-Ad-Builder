@@ -1,0 +1,24 @@
+@use "../themes/attract-convert-themes" as *;
+@use "../mixins/attract-background" as *;
+@use "sass:map";
+
+// Mixin to apply attract theme backgrounds based on theme name
+// but could be extended to include other themed styles later such as text colors etc
+@mixin global-attract-theme($name) {
+    $theme: map.get($attract-convert-themes, $name);
+
+    @include gradientBackground(
+        map.get($theme, background-gradient-angle),
+        map.get($theme, background-start),
+        map.get($theme, background-end)
+    );
+}
+
+@mixin frame-attract-theme($name) {
+    $theme: map.get($attract-convert-themes, $name);
+
+    // Apply background color to frame copy container
+    .frame__copy-container {
+        background-color: map.get($theme, copy-container-bg);
+    }
+}

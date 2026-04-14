@@ -1,0 +1,16 @@
+@use "../mixins/attract-theme" as *;
+
+// Uses DARK BLUE theme for royal navy submariners attract template
+// Apply specific styling to royal navy submariners attract template
+
+// For global styles
+.global.template-attract-royal-navy-submariners {
+    @include global-attract-theme(dark-blue);
+    // additional global styles for royal navy submariners attract template can go here
+}
+
+// For frame styles - royal navy submariners attract template
+.frame.template-attract-royal-navy-submariners {
+    // additional frame specific styles for royal navy submariners attract template can go here
+    @include frame-attract-theme(dark-blue);
+}

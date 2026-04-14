@@ -1,0 +1,19 @@
+@use "../themes/attract-convert-themes" as *;
+@use "../mixins/attract-background" as *;
+@use "sass:map";
+
+// Mixin to apply convert theme backgrounds based on theme name
+// Currently reuses the same colour map as attract themes
+@mixin global-convert-theme($name) {
+    $theme: map.get($attract-convert-themes, $name);
+
+    @include gradientBackground(
+        map.get($theme, background-gradient-angle),
+        map.get($theme, background-start),
+        map.get($theme, background-end)
+    );
+}
+
+@mixin frame-convert-theme($name) {
+    $theme: map.get($attract-convert-themes, $name);
+}

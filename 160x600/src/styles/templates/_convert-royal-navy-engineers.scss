@@ -1,0 +1,16 @@
+@use "../mixins/convert-theme" as *;
+
+// Uses PALE BLUE theme for royal navy engineers convert template
+// Apply specific styling to royal navy engineers convert template
+
+// For global styles
+.global.template-convert-royal-navy-engineers {
+    @include global-convert-theme(pale-blue);
+    // additional global styles for royal navy engineers convert template can go here
+}
+
+// For frame styles - royal navy engineers convert template
+.frame.template-convert-royal-navy-engineers {
+    // additional frame specific styles for royal navy engineers convert template can go here
+    @include frame-convert-theme(pale-blue);
+}

@@ -1,0 +1,110 @@
+@use "../core";
+@use "../fonts";
+@use "../variables" as *;
+@use "../mixins/convert-mixins.scss" as convertMixins;
+
+// Global and global elements
+.global.template-reserves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    color: $black;
+
+    &.template-reserves {
+        // Logo (explicit 320x50 reserves size/position)
+        .global__logo {
+            width: 33px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        // Image
+        .global__image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 109.89px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .global__cta {
+            font-family: Barlow, sans-serif;
+            font-size: 6.11px;
+            position: absolute;
+            bottom: 8px;
+            left: 43px;
+        }
+    }
+}
+
+// Frame and frame elements
+.frame.template-reserves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: $black;
+
+    // Copy Container
+    .frame__copy-container {
+        opacity: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 12.78px;
+        display: flex;
+        position: absolute;
+        // 8px from top; free to extend down towards CTA
+        top: 8px;
+        left: 43px;
+        right: 110px;
+        bottom: 0;
+        overflow: hidden;
+        font-weight: 800;
+
+        .frame__copy {
+            width: 100%;
+            // TODO: could split this to another field?
+            #frame__copy-line-3 {
+                font-size: 6.11px;
+                margin-top: 5.56px;
+                font-weight: 700;
+                font-family: "Barlow";
+                left: 105.49px;
+                position: absolute;
+                top: 16.67px;
+            }
+            #frame__copy-line-4 {
+                font-size: 6.11px;
+                font-family: "Barlow";
+                font-weight: 500;
+                left: 105.49px;
+                position: absolute;
+                top: 16.67px;
+            }
+        }
+    }
+    // Image
+    .frame__image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0; // start hidden; GSAP cross-fades images in
+        z-index: 1;
+    }
+
+    .frame__cta {
+        @include convertMixins.convert-cta;
+        opacity: 0;
+    }
+}

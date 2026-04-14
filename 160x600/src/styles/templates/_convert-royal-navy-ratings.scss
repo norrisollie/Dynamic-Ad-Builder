@@ -1,0 +1,16 @@
+@use "../mixins/convert-theme" as *;
+
+// Uses LUMINOUS BLUE theme for royal navy ratings convert template
+// Apply specific styling to royal navy ratings convert template
+
+// For global styles
+.global.template-convert-royal-navy-ratings {
+    @include global-convert-theme(luminous-blue);
+    // additional global styles for royal navy ratings convert template can go here
+}
+
+// For frame styles - royal navy ratings convert template
+.frame.template-convert-royal-navy-ratings {
+    // additional frame specific styles for royal navy ratings convert template can go here
+    @include frame-convert-theme(luminous-blue);
+}

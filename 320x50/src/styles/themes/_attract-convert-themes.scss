@@ -1,0 +1,29 @@
+// Attract + convert template themes
+// Colours only
+
+$attract-convert-themes: (
+    green: (
+        background-gradient-angle: 175.93deg,
+        background-start: #004712,
+        background-end: #032a10,
+        copy-container-bg: #002e0c,
+    ),
+    luminous-blue: (
+        background-gradient-angle: 165.96deg,
+        background-start: #1e46ff,
+        background-end: #000b40,
+        copy-container-bg: #122eb1,
+    ),
+    dark-blue: (
+        background-gradient-angle: 165.96deg,
+        background-start: #002d79,
+        background-end: #00051b,
+        copy-container-bg: #00163b,
+    ),
+    pale-blue: (
+        background-gradient-angle: 165.96deg,
+        background-start: #657595,
+        background-end: #00163b,
+        copy-container-bg: #00163b,
+    ),
+);

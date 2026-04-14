@@ -1,0 +1,144 @@
+@use "../mixins/visual-grid-background" as *;
+@use "../variables" as *;
+
+// common styles for attract template
+.template-attract.global {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include visualGrid();
+
+    .global__logo,
+    .global__image,
+    .global__cta {
+        display: none;
+    }
+}
+
+.frame.template-attract {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    // initial state for all but frame 1
+    &:not(&#frame-1) {
+        translate: 0 100%;
+    }
+
+    &#frame-1 {
+        // frame 1 search bar only
+        .frame__searchbar {
+            background: #fff;
+            border-radius: 99px;
+            width: 499px;
+            font-size: 22px;
+            padding: 10px 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            scale: 0 1;
+            & .frame__copy {
+                font-weight: 500;
+                display: flex;
+                flex: 1 1 auto;
+                min-width: 0;
+                & .frame__copy-text {
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+
+                & .frame__split-lines {
+                    white-space: nowrap;
+                }
+                & .frame__copy-cursor {
+                    display: inline-block;
+                    width: 1px;
+                    background: $black;
+                    height: 1em;
+                    opacity: 0;
+                }
+            }
+
+            & .frame__copy-icon-wrapper {
+                display: flex;
+                align-items: center;
+                flex: 0 0 20px;
+                width: 20px;
+                height: 100%;
+                opacity: 0;
+
+                & .frame__copy-icon {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    // Image for all but frame 1
+    &:not(&#frame-1) {
+        .frame__inner {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+
+            .frame__logo {
+                z-index: 1;
+                width: 71px;
+                height: 84px;
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                transform: translateY(-50%);
+            }
+
+            .frame__copy-container {
+                z-index: 1;
+                color: #fff;
+                padding: 5px 5px 7px;
+                font-size: 32px;
+                font-weight: 900;
+                line-height: 1;
+                position: absolute;
+                top: 50%;
+                left: 125px;
+                transform: translateY(-50%);
+                margin-right: 10px;
+            }
+
+            .frame__image {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .frame__cta {
+                z-index: 1;
+                color: $black;
+                background: #fff;
+                border-radius: 99px;
+                font-size: 18px;
+                position: absolute;
+                top: 50%;
+                right: 60px;
+                transform: translateY(-50%);
+                padding: 5px 15px;
+                font-weight: 500;
+                line-height: 1.5;
+            }
+        }
+    }
+}

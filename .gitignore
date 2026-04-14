@@ -1,0 +1,38 @@
+# =========================
+# macOS system files
+# =========================
+.DS_Store
+**/.DS_Store
+
+# =========================
+# Node / package managers
+# =========================
+node_modules/
+
+# =========================
+# Build outputs (all levels)
+# =========================
+dist/
+output/
+**/dist/
+**/output/
+**/dev-build/
+**/live-build/
+**/example-build/
+
+# =========================
+# Parcel cache
+# =========================
+.parcel-cache/
+**/.parcel-cache/
+
+# =========================
+# Zip exports
+# =========================
+*.zip
+
+# =========================
+# Specific project assets
+# =========================
+.parcel-cache/
+**/.parcel-cache/

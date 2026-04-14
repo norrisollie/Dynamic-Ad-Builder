@@ -1,0 +1,9 @@
+// Mixin for gradient background used in attract themes
+@mixin gradientBackground($degree, $colour1, $colour2) {
+    background: linear-gradient($degree, $colour1 0%, $colour2 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

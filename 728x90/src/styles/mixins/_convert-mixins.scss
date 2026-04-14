@@ -1,0 +1,18 @@
+@use "../variables.scss" as *;
+
+// Shared mixins for convert templates
+
+@mixin convert-cta {
+    z-index: 2;
+    text-align: center;
+    white-space: nowrap;
+    background: #fff;
+    border-radius: 99px;
+    width: fit-content;
+    padding: 5px 10px 6px;
+    position: absolute;
+    bottom: 9px;
+    left: 80px;
+    font-size: 12px;
+    font-weight: 500;
+}

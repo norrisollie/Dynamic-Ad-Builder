@@ -1,0 +1,37 @@
+{
+  "folders": [
+    {
+      "name": "160x600",
+      "path": "160x600",
+    },
+    {
+      "name": "300x250",
+      "path": "300x250",
+    },
+    {
+      "name": "300x600",
+      "path": "300x600",
+    },
+    {
+      "name": "320x50",
+      "path": "320x50",
+    },
+    {
+      "name": "320x250",
+      "path": "320x250",
+    },
+    {
+      "name": "728x90",
+      "path": "728x90",
+    },
+    {
+      "name": "970x250",
+      "path": "970x250",
+    },
+  ],
+  "settings": {
+    "chat.tools.terminal.autoApprove": {
+      "npm run start:live": true,
+    },
+  },
+}
