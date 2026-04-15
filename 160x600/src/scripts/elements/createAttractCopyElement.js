@@ -101,7 +101,7 @@ export const createAttractCopyElement = (
             "img",
             iconClass,
             iconId,
-            assets/images/search.svg" // icon image path
+            "assets/images/search.svg" // icon image path
         );
 
         // assemble: copyWrapper -> (copyText + cursor), iconWrapper -> icon, searchbar -> (copyWrapper + iconWrapper)
