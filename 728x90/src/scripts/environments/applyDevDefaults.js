@@ -83,24 +83,21 @@ export const applyDevDefaults = (feed) => {
     feed.f2_cta = "Apply now";
     feed.f2_image = {};
     feed.f2_image.Type = "file";
-    feed.f2_image.Url =
-        "2025/attract/728x90_engineers_attract_development_image_f2.jpeg";
+    feed.f2_image.Url = "assets/images/placeholder_f2.png";
 
     // Frame 3
     feed.f3_copy1 = "EDGE GAINER";
     feed.f3_cta = "Apply now";
     feed.f3_image = {};
     feed.f3_image.Type = "file";
-    feed.f3_image.Url =
-        "2025/attract/728x90_engineers_attract_development_image_f3.jpeg";
+    feed.f3_image.Url = "assets/images/placeholder_f3.png";
 
     // Frame 4
     feed.f4_copy1 = "BECOME A SPECIALIST";
     feed.f4_cta = "Apply now";
     feed.f4_image = {};
     feed.f4_image.Type = "file";
-    feed.f4_image.Url =
-        "2025/attract/728x90_engineers_attract_development_image_f4.jpeg";
+    feed.f4_image.Url = "assets/images/placeholder_f4.png";
 
     // Frame 5
     feed.f5_copy1 = "";
