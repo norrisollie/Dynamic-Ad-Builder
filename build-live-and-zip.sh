@@ -5,7 +5,7 @@ BUILDS_DIR="$REPO_ROOT/builds"
 mkdir -p "$BUILDS_DIR"
 
 # Create a per-run builds folder so each script invocation gets its own directory
-RUN_TS="$(date +%Y%m%d.%H%M%S)"
+RUN_TS="$(date +%Y-%m-%d_%H-%M-%S)"
 RUN_DIR="$BUILDS_DIR/build.$RUN_TS"
 mkdir -p "$RUN_DIR"
 
@@ -22,13 +22,13 @@ for dir in */; do
 # Compute absolute project dir and print actions
   PROJECT_DIR="$(cd "$dir" && pwd)"
   echo "Cleaning caches and previous builds for $PROJECT_DIR"
-  rm -rf "$PROJECT_DIR/.parcel-cache" "$PROJECT_DIR/.cache" "$PROJECT_DIR/dist" "$PROJECT_DIR/output" "$(pwd)/.parcel-cache"    
+  rm -rf "$PROJECT_DIR/.parcel-cache" "$PROJECT_DIR/.cache" "$PROJECT_DIR/dist" "$PROJECT_DIR/output" "$(pwd)/.parcel-cache"
   # Try package-provided clean first (if present), then run live build
   (cd "$dir" && (npm run prebuild:live || true) && npm run build:live) || continue
 
   # Determine actual output directory
   OUT="$dir/dist"
-  
+
   if [ ! -d "$OUT" ]; then
     echo "No output dir found for $SIZE — skipping zip"
     continue
@@ -51,7 +51,7 @@ for dir in */; do
   find "$OUT" -type d -name 'fonts' -prune -print -exec rm -rf {} + || true
 
   # Create a timestamp and rename the output folder so each build creates a new folder
-  TIMESTAMP="$(date +%H%M%S.%d%m%y)"
+  TIMESTAMP="$(date +%H-%M-%S_%d-%m-%y)"
   NEW_OUT="${OUT}.${TIMESTAMP}"
   if [ -e "$NEW_OUT" ]; then
     NEW_OUT="${OUT}.${TIMESTAMP}.$(date +%s)"
@@ -66,7 +66,10 @@ for dir in */; do
   # Create timestamped zip in run folder (no per-size subfolders)
   ZIP_PATH="$RUN_DIR/${SIZE}.live.${TIMESTAMP}.zip"
   echo "Creating zip: $ZIP_PATH"
-  (cd "$OUT" && zip -r "$ZIP_PATH" .)
+  TEMP_ZIP_DIR="$(mktemp -d)"
+  cp -r "$OUT/." "$TEMP_ZIP_DIR/$SIZE"
+  (cd "$TEMP_ZIP_DIR" && zip -r "$ZIP_PATH" "$SIZE")
+  rm -rf "$TEMP_ZIP_DIR"
   if [ -f "$ZIP_PATH" ]; then
     echo "Zip created: $ZIP_PATH"
     echo "Removing output folder: $OUT"
