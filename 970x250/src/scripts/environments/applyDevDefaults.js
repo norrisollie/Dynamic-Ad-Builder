@@ -8,8 +8,7 @@ export const applyDevDefaults = (feed) => {
     feed.preview = "";
     feed.id = 121;
     feed.uid = 121;
-    feed.reporting_label =
-        "970x250_Royal_Navy_Attract_Engineers_Professional_Benefits_Development";
+    feed.reporting_label = "970x250_Royal_Navy_Convert_Royal_Marines_Pay";
     feed.default = true;
     feed.active = true;
     feed.hero = true;
@@ -40,11 +39,10 @@ export const applyDevDefaults = (feed) => {
 
     // brand info
     feed.brand = "Royal Navy";
-    feed.strand = "Engineers";
+    feed.strand = "Royal Marines";
     feed.product = "Careers";
-    feed.message = "Travel";
-    feed.extra_css =
-        ".template-attract.global .global__visual-grid {\n    --gridColor: rgba(255, 255, 255, 0.2) !important;\n}";
+    feed.message = "Pay";
+    feed.extra_css = "";
 
     // template / playback config (keep your dwell + loop values)
 
@@ -55,10 +53,10 @@ export const applyDevDefaults = (feed) => {
     // attract-royal-navy-ratings
     // attract-royal-marines
     // convert-royal-marines
-    feed.global_config_template = "attract-royal-marines";
-    feed.frameOrder = "1,2,3,4";
+    feed.global_config_template = "convert-royal-marines";
+    feed.frameOrder = "1";
     feed.global_config_frameDwellTime = 2;
-    feed.global_config_loopCount = 1;
+    feed.global_config_loopCount = 2;
 
     // global visuals (use your local / placeholder assets where appropriate)
     feed.global_bg = {};
@@ -72,32 +70,32 @@ export const applyDevDefaults = (feed) => {
     feed.global_cta = "";
 
     // Frame 1
-    feed.f1_copy1 = "Jobs that pay me to skill up";
-    feed.f1_cta = "";
+    feed.f1_copy1 = "ENGAGE YOUR<BR>CAREER<BR>EARN UP TO 64K+";
+    feed.f1_cta = "Apply now";
     feed.f1_image = {};
     feed.f1_image.Type = "file";
-    feed.f1_image.Url = "empty.png";
+    feed.f1_image.Url = "assets/images/placeholder_f1.png";
 
     // Frame 2
-    feed.f2_copy1 = "FUTURE SHAPER";
-    feed.f2_cta = "Apply now";
+    feed.f2_copy1 = "";
+    feed.f2_cta = "";
     feed.f2_image = {};
     feed.f2_image.Type = "file";
-    feed.f2_image.Url = "assets/images/placeholder_f2.png";
+    feed.f2_image.Url = "empty.png";
 
     // Frame 3
-    feed.f3_copy1 = "EDGE GAINER";
-    feed.f3_cta = "Apply now";
+    feed.f3_copy1 = "";
+    feed.f3_cta = "";
     feed.f3_image = {};
     feed.f3_image.Type = "file";
-    feed.f3_image.Url = "assets/images/placeholder_f3.png";
+    feed.f3_image.Url = "empty.png";
 
     // Frame 4
-    feed.f4_copy1 = "BECOME A SPECIALIST";
-    feed.f4_cta = "Apply now";
+    feed.f4_copy1 = "";
+    feed.f4_cta = "";
     feed.f4_image = {};
     feed.f4_image.Type = "file";
-    feed.f4_image.Url = "assets/images/placeholder_f4.png";
+    feed.f4_image.Url = "empty.png";
 
     // Frame 5
     feed.f5_copy1 = "";

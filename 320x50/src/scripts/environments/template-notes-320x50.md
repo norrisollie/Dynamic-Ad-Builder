@@ -118,3 +118,41 @@ Reference rows: all `Convert_*` blocks in the sheet, e.g. IDs 281–370.
     - `f2_*`, `f3_*`, `f4_*`, `f5_*` – empty in the sheet for all Convert rows.
 - Optional CSS overrides
     - Some Submariners / Officers rows use `extra_css` to tweak `.frame__copy-line:nth-child(3)` font-size or `.global__cta` positioning.
+
+
+---
+
+## Switching the dev default template
+
+To change the template used when developing locally, edit `applyDevDefaults.js` in this folder. The key fields to update are:
+
+| Field | What to change |
+|---|---|
+| `reporting_label` | Update to match the new template, e.g. `160x600_Royal_Navy_Convert_Royal_Marines_Pay` |
+| `strand` | e.g. `"Royal Marines"`, `"Engineers"`, `"Ratings"`, `"Submariners"`, `"Officers"` |
+| `message` | e.g. `"Pay"`, `"Travel"`, `"Development"` |
+| `extra_css` | Clear to `""` for Convert/Reserves; add the grid override string for Attract |
+| `global_config_template` | One of the template keys listed above |
+| `frameOrder` | `"1"` for Convert/Reserves; `"1,2,3,4"` for Attract |
+| `global_config_loopCount` | `2` for Convert/Reserves; `1` for Attract |
+| `f1_copy1` | Main copy for the frame — use `<BR>` for line breaks |
+| `f1_cta` | `"Apply now"` for Convert; `""` for Attract frame 1 |
+| `f1_image.Url` | `"assets/images/placeholder_f1.png"` if using a placeholder; `"empty.png"` if no image |
+| `f2–f4` copy/cta/image | Populate for Attract; clear to empty strings / `"empty.png"` for Convert/Reserves |
+
+---
+
+## Asset URL format in JS
+
+When referencing asset paths in JavaScript (including inside `applyDevDefaults.js`), always use a bare relative path starting with the folder name — never a leading `./` or `../`:
+
+```js
+// Correct
+feed.f1_image.Url = "assets/images/placeholder_f1.png";
+
+// Wrong — do not use these
+feed.f1_image.Url = "./assets/images/placeholder_f1.png";
+feed.f1_image.Url = "../assets/images/placeholder_f1.png";
+```
+
+Parcel resolves asset URLs relative to the output root, so a leading `./` or `../` will produce an incorrect path in the built output.
