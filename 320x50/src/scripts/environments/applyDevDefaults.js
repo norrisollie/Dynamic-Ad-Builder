@@ -73,7 +73,7 @@ export const applyDevDefaults = (feed) => {
     feed.global_cta = "";
 
     // Frame 1
-    feed.f1_copy1 = "ENGAGE YOUR<BR>CAREER<BR>EARN UP TO 64K+";
+    feed.f1_copy1 = "ENGAGE YOUR CAREER<BR>EARN UP TO 64K+";
     feed.f1_cta = "Apply now";
     feed.f1_image = {};
     feed.f1_image.Type = "file";

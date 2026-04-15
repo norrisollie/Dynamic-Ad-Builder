@@ -100,5 +100,7 @@
 
     .frame__cta {
         @include convertMixins.convert-cta;
+        opacity: 0;
+        visibility: hidden;
     }
 }
